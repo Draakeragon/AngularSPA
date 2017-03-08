@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Hoofdpagina</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  </head>
+
+  <body ng-app="todoApp" ng-controller="todoController">
+
+        <div id="main">
+        
+            <div class="main_top">
+            
+            </div>
+            
+            <div class="main_body">
+
+    <br>
+    <div class="col-lg-6">
+	    <div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+	    </div>
+	</div>
+
+	<br><br/>
+
+    <table class="table">
+    	<thead>
+    		<tr>
+    			<th>ISBN</th><th>Titel</th><th>Category</th><th>Auteur</th><th>Prijs</th><th></th>
+    		</tr>
+    	</thead>
+    	<tbody>
+
+            <!-- FOREACH book IN array -->
+    		    		<tr ng-repeat="book in books | filter: checked=false | filter: searchTerm">
+                	<td>
+                    <span ng-hide="item.updating">{{item.ISBN}}</span>
+                    <input type="text" ng-model="book.ISBN" ng-show="item.updating">
+                </td>
+    			<td>
+                    <span ng-hide="item.updating">{{item.name}}</span>
+                    <input type="text" ng-model="book.name" ng-show="item.updating">
+
+                </td>
+                <td>
+                    {{item.category}}
+                </td>
+               	<td>
+                    <span ng-hide="item.updating">{{item.auteur}}</span>
+                    <input type="text" ng-model="book.auteur" ng-show="book.updating">
+                </td>
+                <td>
+                    <span ng-hide="item.updating">{{item.prijs}}</span>
+                    <input type="text" ng-model="book.prijs" ng-show="item.updating">
+                </td>
+    		</tr>
+
+    	</tbody>
+    </table>
+
+    <hr>
+
+
+    <script type="text/javascript" src="script/app.js"></script>
+                
+
+    <div class="main_bottom"></div>
+            
+        </div>
+        
+        
+        
+        <div id="footer">
+
+        </div>
+        
+        </div>
+  </body>
+</html>
+
+
+</head>
+
+

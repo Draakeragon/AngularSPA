@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Boeken Administratie pagina</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  </head>
+
+  <body ng-app="todoApp" ng-controller="todoController">
+
+        <div id="main">
+        
+            <div class="main_top">
+            
+            </div>
+            
+            <div class="main_body">
+
+    <br>
+    <div class="col-lg-6">
+	    <div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+	    </div>
+	</div>
+
+	<br><br/>
+
+    <table class="table">
+    	<thead>
+    		<tr>
+    			<th>ISBN</th><th>Titel</th><th>Category</th><th>Auteur</th><th>Prijs</th><th></th>
+    		</tr>
+    	</thead>
+    	<tbody>
+
+            <!-- FOREACH book IN array -->
+    		<tr ng-repeat="book in books | filter: checked=false | filter: searchTerm">
+                	<td>
+                    <span ng-hide="book.updating">{{book.ISBN}}</span>
+                    <input type="text" ng-model="book.ISBN" ng-show="book.updating">
+                </td>
+    			<td>
+                    <span ng-hide="book.updating">{{book.Title}}</span>
+                    <input type="text" ng-model="book.Title" ng-show="book.updating">
+
+                </td>
+                <td>
+                    {{book.Category}}
+                </td>
+               	<td>
+                    <span ng-hide="book.updating">{{book.Author}}</span>
+                    <input type="text" ng-model="book.Author" ng-show="book.updating">
+                </td>
+                  	<td>
+                    <span ng-hide="book.updating">{{book.Description}}</span>
+                    <input type="text" ng-model="book.Description" ng-show="book.updating">
+                </td>
+                <td>
+                    <span ng-hide="book.updating">{{book.Price}}</span>
+                    <input type="text" ng-model="book.Price" ng-show="book.updating">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="updatebook(book)" ng-show="book.updating">Save</button>
+
+                    <button type="button" class="btn btn-warning" ng-click="book.updating=true;" ng-hide="book.updating">Update</button>
+
+                    <button type="button" class="btn btn-danger" ng-click="deletebook(book)">Verwijderen</button>
+                </td>
+    		</tr>
+
+    	</tbody>
+    </table>
+
+    <hr>
+
+    <form>
+	  <div class="form-group">
+	    <label for="bookInput">Nieuw boek toevoegen</label>
+	    <input type="text" class="form-control" id="bookInput" placeholder="Naam ..." ng-model="newbook.Title">
+	  </div>
+	  <div class="form-group">
+	  	<select class="form-control" ng-model="newbook.Category">
+		  <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
+		</select>
+	  </div>
+
+	  <button type="button" class="btn btn-danger">Ongedaan maken</button>
+	  <button type="submit" class="btn btn-primary" ng-click="saveNewbook()">Opslaan</button>
+	</form>
+
+
+    <script type="text/javascript" src="../script/app.js"></script>
+                
+
+    <div class="main_bottom"></div>
+            
+        </div>
+        
+        
+        
+        <div id="footer">
+
+        </div>
+        
+        </div>
+  </body>
+</html>
+
+
+</head>
+
+

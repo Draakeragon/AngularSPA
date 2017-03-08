@@ -1,0 +1,14 @@
+{
+  "name": "workshop4",
+  "version": "1.0.0",
+  "description": "workshop week 4",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "karma start test/karma.conf.js"
+  },
+  "author": "Adriaan van den Berg",
+  "license": "UNLICENSED"
+}

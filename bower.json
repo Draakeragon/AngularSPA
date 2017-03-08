@@ -1,0 +1,17 @@
+{
+  "name": "Demo applicattie",
+  "description": "Demo workshop 4",
+  "main": "",
+  "authors": [
+    "Adriaan van den Berg"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
