@@ -1,24 +1,26 @@
 var module = angular.module('todoApp', []);
 
 module.controller('todoController', function($scope) {
+	//code
 
-	$scope.categories = ["Fantasy", "Sci-Fi", "Horror", "School", "Jeugd", "Wetenschap"];
+	$scope.categories = ["Detective", "Wetenschap", "Overig"];
 
 
-	var localBooks = JSON.parse(localStorage.getItem("books"));
+	var localItems = JSON.parse(localStorage.getItem("items"));
 
-	if(localBooks != undefined && localBooks.length > 0) {
-		$scope.books = localBooks;
+	if(localItems != undefined && localItems.length>0) {
+		$scope.items = localItems;
 	}
 	else {
-		$scope.books = [
-			{ISBN:"59583726" , name:"Lord of the Rings", category:"Fantasy", author: "J.R.R Tolkien", description: "Een van de meest verkochte fantasy boeken aller tijden", price: "24.99"},
-			{ISBN:"69483721" , name:"Sherlock Holmes, Hound of the Baskervilles", category:"Horror", author: "Arthur Conan Doyle", description: "Een klassieker van de schrijver achter sherlock holmes", price: "10.00"},
-			{ISBN:"79381212" , name:"Stephen Hawkins'universum", category:"Wetenschap", author: "Stephen Hawking", description: "Alles wat je kan weten over wormgaten", price: "12.99"},
+		$scope.items = [
+			{isbn:"14882665", titel: "Sherlock Holmes", categorie:"Detective", auteur: "Arthur Conan Doyle", beschrijving: "een spannend sherlock Holems Boek", prijs: 12.99},
+			{isbn:"69483726", titel: "Alles over antimaterie", categorie:"Wetenschap", auteur: "Stephan Hawking", beschrijving: "Het universum van Stephen Hawking", prijs: 20.99},
+			{isbn:"59382711", titel: "Guinnes book of Records", categorie:"Overig", auteur: "Guinnes inc.", beschrijving: "Alle records in een boek!", prijs: 40.49},
+			{isbn:"95698327", titel: "test", categorie:"test", auteur: "test", beschrijving: "test", prijs: 10.00}
 		];
 	}
 
-	$scope.deleteItem = function(book) {
+	$scope.deleteItem = function(item) {
 
 		var deleteIndex = -1;
 		$scope.items.forEach(function(e, i) {
@@ -29,7 +31,7 @@ module.controller('todoController', function($scope) {
 
 		$scope.items.splice(deleteIndex, 1);
 
-		localStorage.setItem("books", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.stringify($scope.items));
 	};
 
 	$scope.saveNewItem = function() {
@@ -38,18 +40,17 @@ module.controller('todoController', function($scope) {
 		$scope.items.push({
 			name: $scope.newItem.name,
 			category: $scope.newItem.category,
-			checked: false
 		});
 
 		$scope.newItem = {};
 
-		localStorage.setItem("books", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.stringify($scope.items));
 	};
 
 	$scope.updateItem = function(item) {
 		item.updating=false;
 
-		localStorage.setItem("books", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.stringify($scope.items));
 	};
 
 

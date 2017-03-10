@@ -9,6 +9,22 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <title>Boeken Administratie pagina</title>
 
+     <style type="text/css">
+    .detective {
+    	color: #BADA55;
+    }
+
+    .wetenschap {
+    	color: #C0FFEE;
+    }
+
+    .overig {
+    	color: #D13537;
+    }
+
+    </style>
+
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
   </head>
 
@@ -34,43 +50,48 @@
     <table class="table">
     	<thead>
     		<tr>
-    			<th>ISBN</th><th>Titel</th><th>Category</th><th>Auteur</th><th>Prijs</th><th></th>
+    			<th>ISBN</th><th>Titel</th><th>Categorie</th><th>Auteur</th><th>Beschrijving</th><th>Prijs</th><th></th>
     		</tr>
     	</thead>
     	<tbody>
 
-            <!-- FOREACH book IN array -->
-    		<tr ng-repeat="book in books | filter: checked=false | filter: searchTerm">
+            <!-- FOREACH item IN array -->
+    		<tr ng-repeat="item in items | filter: searchTerm">
                 	<td>
-                    <span ng-hide="book.updating">{{book.ISBN}}</span>
-                    <input type="text" ng-model="book.ISBN" ng-show="book.updating">
+                    <span ng-hide="item.updating">{{item.isbn}}</span>
+                    <input type="text" ng-model="item.isbn" ng-show="item.updating">
                 </td>
     			<td>
-                    <span ng-hide="book.updating">{{book.Title}}</span>
-                    <input type="text" ng-model="book.Title" ng-show="book.updating">
+                    <span ng-hide="item.updating">{{item.titel}}</span>
+                    <input type="text" ng-model="item.titel" ng-show="item.updating">
 
                 </td>
                 <td>
-                    {{book.Category}}
+                    <td ng-class="{detective: item.categorie==='Detective', wetenschap: item.categorie==='Wetenschap', overig: item.categorie==='Overig'}">
+
+                                   {{item.categorie}}
                 </td>
                	<td>
-                    <span ng-hide="book.updating">{{book.Author}}</span>
-                    <input type="text" ng-model="book.Author" ng-show="book.updating">
+                    <span ng-hide="item.updating">{{item.auteur}}</span>
+                    <input type="text" ng-model="item.auteur" ng-show="item.updating">
                 </td>
                   	<td>
-                    <span ng-hide="book.updating">{{book.Description}}</span>
-                    <input type="text" ng-model="book.Description" ng-show="book.updating">
+                    <span ng-hide="item.updating">{{item.beschrijving}}</span>
+                    <input type="text" ng-model="item.beschrijving" ng-show="item.updating">
                 </td>
                 <td>
-                    <span ng-hide="book.updating">{{book.Price}}</span>
-                    <input type="text" ng-model="book.Price" ng-show="book.updating">
+                    <span ng-hide="item.updating">{{item.prijs}}</span>
+                    <input type="text" ng-model="item.prijs" ng-show="item.updating">
                 </td>
                 <td>
-                    <button type="button" class="btn btn-success" ng-click="updatebook(book)" ng-show="book.updating">Save</button>
+                    <input type="checkbox" ng-model="item.checked" ng-disabled="!item.updating">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="updateItem(item)" ng-show="item.updating">Save</button>
 
-                    <button type="button" class="btn btn-warning" ng-click="book.updating=true;" ng-hide="book.updating">Update</button>
+                    <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
 
-                    <button type="button" class="btn btn-danger" ng-click="deletebook(book)">Verwijderen</button>
+                    <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Verwijderen</button>
                 </td>
     		</tr>
 
@@ -81,17 +102,17 @@
 
     <form>
 	  <div class="form-group">
-	    <label for="bookInput">Nieuw boek toevoegen</label>
-	    <input type="text" class="form-control" id="bookInput" placeholder="Naam ..." ng-model="newbook.Title">
+	    <label for="itemInput">Nieuw boek toevoegen</label>
+	    <input type="text" class="form-control" id="itemInput" placeholder="Naam ..." ng-model="newItem.titel">
 	  </div>
 	  <div class="form-group">
-	  	<select class="form-control" ng-model="newbook.Category">
+	  	<select class="form-control" ng-model="newItem.category">
 		  <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
 		</select>
 	  </div>
 
 	  <button type="button" class="btn btn-danger">Ongedaan maken</button>
-	  <button type="submit" class="btn btn-primary" ng-click="saveNewbook()">Opslaan</button>
+	  <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Opslaan</button>
 	</form>
 
 
