@@ -38,8 +38,12 @@ module.controller('todoController', function($scope) {
 		console.log($scope.newItem);
 
 		$scope.items.push({
-			name: $scope.newItem.name,
-			category: $scope.newItem.category,
+			isbn: $scope.newItem.isbn,
+			titel: $scope.newItem.titel,
+			categorie: $scope.newItem.categorie,
+			auteur: $scope.newItem.auteur,
+			beschrijving: $scope.newItem.beschrijving,
+			prijs: $scope.newItem.prijs,
 		});
 
 		$scope.newItem = {};
