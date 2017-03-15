@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
+  <head ng-app ="myApp">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,61 +15,24 @@
   <body ng-app="todoApp" ng-controller="todoController">
 
         <div id="main">
-        
+
             <div class="main_top">
             
             </div>
-            
+
             <div class="main_body">
 
     <br>
-    <div class="col-lg-6">
-	    <div class="input-group">
-	      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
-	    </div>
-	</div>
 
-	<br><br/>
-
-    <table class="table">
-    	<thead>
-    		<tr>
-    			<th>ISBN</th><th>Titel</th><th>Category</th><th>Auteur</th><th>Prijs</th><th></th>
-    		</tr>
-    	</thead>
-    	<tbody>
-
-            <!-- FOREACH book IN array -->
-    		    		<tr ng-repeat="book in books | filter: checked=false | filter: searchTerm">
-                	<td>
-                    <span ng-hide="item.updating">{{item.ISBN}}</span>
-                    <input type="text" ng-model="book.ISBN" ng-show="item.updating">
-                </td>
-    			<td>
-                    <span ng-hide="item.updating">{{item.name}}</span>
-                    <input type="text" ng-model="book.name" ng-show="item.updating">
-
-                </td>
-                <td>
-                    {{item.category}}
-                </td>
-               	<td>
-                    <span ng-hide="item.updating">{{item.auteur}}</span>
-                    <input type="text" ng-model="book.auteur" ng-show="book.updating">
-                </td>
-                <td>
-                    <span ng-hide="item.updating">{{item.prijs}}</span>
-                    <input type="text" ng-model="book.prijs" ng-show="item.updating">
-                </td>
-    		</tr>
-
-    	</tbody>
-    </table>
+            <a href="#/admin">Admin</a>
+            <a href="#/boeken">Boekenlijst</a>
+            <a href="#/login">login pagina</a>
+  <div ng-view></div> <!-- hier komen de dynamische ingeladen views -->
 
     <hr>
 
-
-    <script type="text/javascript" src="script/app.js"></script>
+    <script type="text/javascript" src="script/route.js"></script> <!-- angular routing-->
+    <script type="text/javascript" src="script/app.js"></script>    <!-- CRUD applicatie -->
                 
 
     <div class="main_bottom"></div>
