@@ -100,22 +100,30 @@
 
     <hr>
 
-    <form>
+    <form name="bookForm">
 	  <div class="form-group">
 	    <label for="itemInput">Nieuw boek toevoegen</label>
-        <input type="number" class="form-control" id="itemInput" min="00000000" max="99999999" placeholder="ISBN Nummer ..." ng-model="newItem.isbn">
-	    <input type="text" class="form-control" id="itemInput" placeholder="titel ..." ng-model="newItem.titel">
-	  </div>
+        <input type="number"  name="isbn" class="form-control" id="itemInput" min="00000000" max="99999999" placeholder="ISBN Nummer ..." ng-model="newItem.isbn" required>
+                <span style="color:red" ng-show= bookForm.isbn.$dirty && bookForm.isbn.$invalid &&
+                    ng-show="bookForm.isbnr.$erro.required">ISBN is verplicht.</span>
+                </br>
+            <div>     
+	    <input type="text" class="form-control" id="itemInput" placeholder="titel ..." ng-model="newItem.titel" required>
+	  </div></br>
 	  <div class="form-group">
-	  	<select class="form-control" ng-model="newItem.categorie">
+	  	<select class="form-control" ng-model="newItem.categorie" required>
 		  <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
 		</select>
-	  </div>
-      <input type="text" class="form-control" id="itemInput" placeholder="auteur ..." ng-model="newItem.auteur">
-      <input type="text" class="form-control" id="itemInput" placeholder="beschrijving ..." ng-model="newItem.beschrijving">
-      <input type="number" class="form-control" id="itemInput" min="1.00" max="99.99" placeholder="prijs ..." ng-model="newItem.prijs">
+	  </div></br>
+      <input type="text" class="form-control" id="itemInput" placeholder="auteur ..." ng-model="newItem.auteur" required>
+</br>
+      <input type="text" class="form-control" id="itemInput" placeholder="beschrijving ..." ng-model="newItem.beschrijving" required>
+</br>
+      <input type="number" class="form-control" id="itemInput" min="1.00" max="99.99" placeholder="prijs ..." ng-model="newItem.prijs"required>
+</br>
 	  <button type="button" class="btn btn-danger">Ongedaan maken</button>
-	  <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Opslaan</button>
+
+	  <button type="submit" class="btn btn-primary" ng-disabled="bookForm.$invalid" ng-click="saveNewItem()">Opslaan</button>
 	</form>
 
 

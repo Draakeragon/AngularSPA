@@ -6,8 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Login Pagina</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>Boeken Administratie pagina</title>
+
+     <style type="text/css">
+    .detective {
+    	color: #BADA55;
+    }
+
+    .wetenschap {
+    	color: #C0FFEE;
+    }
+
+    .overig {
+    	color: #D13537;
+    }
+
+    </style>
+
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
   </head>
@@ -24,13 +40,20 @@
 
     <br>
     <div class="col-lg-6">
+	    <div class="input-group">
+	    </div>
 	</div>
 
 	<br><br/>
 
     <table class="table">
+    	<thead>
+    		<tr>
+    		</tr>
+    	</thead>
+    	<tbody>
 
-              <div class="form-group">
+            <div class="form-group">
 	    <label for="itemInput">Gebruikersnaam</label>
 	    <input type="text" class="form-control" id="itemInput" placeholder="Gebruikersnaam">
         <label for="itemInput">Wachtwoord</label>
@@ -39,9 +62,10 @@
 
 	  <button type="submit" class="btn btn-primary" ng-click="login()">Inloggen</button>
 	</form>
-</table>
-
-    <script type="text/javascript" src="app.js"></script>
+  
+    	</tbody>
+    </table>
+                   <script type="text/javascript" src="../script/app.js"></script>
                 
 
     <div class="main_bottom"></div>
@@ -60,5 +84,7 @@
 
 
 </head>
+
+
 
 
