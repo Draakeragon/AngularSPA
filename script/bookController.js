@@ -1,6 +1,6 @@
-var module = angular.module('todoApp', []);
+var module = angular.module('bookApp', []);
 
-module.controller('todoController', function($scope) {
+module.controller('bookController', function($scope) {
 	//code
 
 	$scope.categories = ["Detective", "Wetenschap", "Overig"];

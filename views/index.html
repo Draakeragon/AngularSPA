@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="nl">
-  <head ng-app ="myApp">
+<html lang="nl" ng-app="bookApp">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <title>Hoofdpagina</title>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script src="../script/angular-route.js"></script> <!-- nodig voor routing -->
   </head>
 
-  <body ng-app="todoApp" ng-controller="todoController">
+  <body ng-app="bookApp" ng-controller="bookController">
 
         <div id="main">
 
@@ -24,15 +24,14 @@
 
     <br>
 
-            <a href="#/admin">Admin</a>
-            <a href="#/boeken">Boekenlijst</a>
-            <a href="#/login">login pagina</a>
+            <a href="#!/admin">Admin</a>
+            <a href="#!/boeken">Boekenlijst</a>
+            <a href="#!/login">login pagina</a>
   <div ng-view></div> <!-- hier komen de dynamische ingeladen views -->
 
     <hr>
-
-    <script type="text/javascript" src="script/route.js"></script> <!-- angular routing-->
-    <script type="text/javascript" src="script/app.js"></script>    <!-- CRUD applicatie -->
+    <script type="text/javascript" src="../script/route.js"></script> <!-- angular routing js script-->
+    <script type="text/javascript" src="../script/bookController.js"></script>    <!-- CRUD applicatie -->
                 
 
     <div class="main_bottom"></div>

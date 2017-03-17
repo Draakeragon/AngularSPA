@@ -21,3 +21,10 @@ Vervang code met:
     },
     "args": ["${file}"]
 }
+
+Om het programma te runne via de server.
+cd /pad vna je folder / http-server  via administrator opdrachtprompt
+Daarna in de browser localhost:8080
+
+nodig voor routing!
+

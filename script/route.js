@@ -1,21 +1,22 @@
-var app = angular.module('myApp', ['ngRoute']);
+var bookApp = angular.module('bookApp', ['ngRoute']);
 
-app.config(['$locationProvider', function($locationProvider) {
-  $locationProvider.hashPrefix('');
+bookApp.config(['$routeProvider', function($routeProvider) {
 
 
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
+    $routeProvider.when('/boeken', {
+            templateUrl: '../views/boeken.html',
+            controller: 'bookController'
+        })
         .when('/admin', {
-            templateUrl: '../views/admin.html'
+            templateUrl: '../views/admin.html',
+            controller: 'bookController'
         })
-            .when('/boeken', {
-            templateUrl: 'views/boeken.html'
+        .when('/login', {
+            templateUrl: '../views/login.html',
+            controller: 'bookController'
         })
-            .when('/login', {
-            templateUrl: 'views/login.html'
-        })
-        .otherwise({ redirectTo: '/' });
+        .otherwise({
+            redirectTo: '/boeken'
+        });
 
-  }])
 }]);
