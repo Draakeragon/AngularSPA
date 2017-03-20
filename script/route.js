@@ -1,7 +1,6 @@
 var bookApp = angular.module('bookApp', ['ngRoute']);
 
-bookApp.config(['$routeProvider', function($routeProvider) {
-
+bookApp.config(function($routeProvider) {
 
     $routeProvider.when('/boeken', {
             templateUrl: 'views/boeken.html',
@@ -19,4 +18,4 @@ bookApp.config(['$routeProvider', function($routeProvider) {
             redirectTo: '/boeken'
         });
 
-}]);
+});

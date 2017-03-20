@@ -1,6 +1,6 @@
-var module = angular.module('bookApp', []);
+//var myModule = angular.module('bookApp');
 
-module.controller('bookController', function($scope) {
+bookApp.controller('bookController', function($scope) {
 	//code
 
 	$scope.categories = ["Detective", "Wetenschap", "Overig"];

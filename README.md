@@ -28,3 +28,5 @@ Daarna in de browser localhost:8080
 
 nodig voor routing!
 
+Chrome Network disable cache
+
