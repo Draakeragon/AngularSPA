@@ -4,15 +4,15 @@ bookApp.config(['$routeProvider', function($routeProvider) {
 
 
     $routeProvider.when('/boeken', {
-            templateUrl: '../views/boeken.html',
+            templateUrl: 'views/boeken.html',
             controller: 'bookController'
         })
         .when('/admin', {
-            templateUrl: '../views/admin.html',
+            templateUrl: 'views/admin.html',
             controller: 'bookController'
         })
         .when('/login', {
-            templateUrl: '../views/login.html',
+            templateUrl: 'views/login.html',
             controller: 'bookController'
         })
         .otherwise({
