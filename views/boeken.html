@@ -33,7 +33,7 @@
                                    {{item.categorie}}
                 </td>
                	<td>
-                    <span ng-hide="item.updating">{{item.auteur}}</span>
+                    <span ng-hide="item.updating">{{item.auteur | makeUppercase}}</span>
                     <input type="text" ng-model="item.auteur" ng-show="item.updating">
                 </td>
                   	<td>
@@ -50,8 +50,6 @@
 
     	</tbody>
     </table>
-                	</form>
-                    
 </div>
 
 
