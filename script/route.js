@@ -14,6 +14,10 @@ bookApp.config(function($routeProvider) {
             templateUrl: 'views/login.html',
             controller: 'bookController'
         })
+        .when('/testfactoryservice', {
+            templateUrl: 'views/testservicefactory.html',
+            controller: 'BTWController'
+        })
         .otherwise({
             redirectTo: '/boeken'
         });
