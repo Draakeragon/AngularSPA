@@ -1,4 +1,4 @@
-var app = angular.module("bookApp", []);
+var app = angular.module("bookApp");
 app.directive("testDirective", function() {
     return {
         restrict : "A",
