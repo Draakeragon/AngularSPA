@@ -18,6 +18,13 @@ body {
   margin: 0 auto 0 auto;
  text-align:left;}
 
+/* targets SPA containers 
+.container
+{
+	width: 800px;
+	background-color: yellow;
+}
+*/
 
 html, body {
 text-align: center;
@@ -116,6 +123,7 @@ padding-bottom:15px;
 padding-left:20px;
 padding-right:20px;
 }
+
 
 
 #main .main_bottom

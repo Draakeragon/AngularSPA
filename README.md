@@ -30,3 +30,8 @@ nodig voor routing!
 
 Chrome Network disable cache
 
+http-server (start de localhost)
+NPM start (start de webserver)
+Webdriver – manager start (start selenium
+Protractor conf js (start protractor.)
+
