@@ -1,7 +1,7 @@
 describe('E2E: AboutController', function() {
 
     beforeEach(function() {
-        browser.get('http://localhost:8080/#!/about');
+        browser.get('http://localhost:8080/#!/');
     });
     
     it('should display a proper h1 message', function() {
