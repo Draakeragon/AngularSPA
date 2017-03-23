@@ -1,5 +1,3 @@
-//var myModule = angular.module('bookApp');
-
 bookApp.controller('bookController', function($scope) {
 	//code
 
@@ -31,7 +29,7 @@ bookApp.controller('bookController', function($scope) {
 
 		$scope.items.splice(deleteIndex, 1);
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.parse($scope.items));
 	};
 
 	$scope.saveNewItem = function() {
@@ -48,13 +46,13 @@ bookApp.controller('bookController', function($scope) {
 
 		$scope.newItem = {};
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.parse($scope.items));
 	};
 
 	$scope.updateItem = function(item) {
 		item.updating=false;
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("items", JSON.parse($scope.items));
 	};
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Hoofdpagina</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script> <!-- angular versie 1.6.2 -->
     <script src="script/angular-route.js"></script> <!-- nodig voor routing -->
     <script src=https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.2/angular-locale_nl-nl.js></script> <!-- nederlandse Localisatie voor currency filter -->
   </head>
@@ -36,10 +36,10 @@
     <div ng-view> </div> <!-- hier komen de dynamische ingeladen views -->
     <script type="text/javascript" src="script/route.js"></script> <!-- angular routing js script-->
     <script type="text/javascript" src="script/bookController.js"></script>    <!-- CRUD applicatie -->
+    <script type="text/javascript" src="script/logincontroller.js"></script>    <!-- login functionaliteit applicatie -->
+    <script type="text/javascript" src="services/userservice.js"></script> <!-- service in map service voor logincontroller -->
     <script type="text/javascript" src="script/uppercasefilter.js"></script>  <!-- custom Filter -->
-    <!--  Wanneer ik deze files importeer dan laadt mijn applicatie niet meer. -->
      <script type="text/javascript" src="script/BTWController.js"></script>  <!-- Factory + Service -->
-     <script type="text/javascript" src="script/directive.js"></script>      <!-- custom Directive -->
 
 
 

@@ -12,7 +12,7 @@ bookApp.config(function($routeProvider) {
         })
         .when('/login', {
             templateUrl: 'views/login.html',
-            controller: 'bookController'
+            controller: 'logincontroller'
         })
         .when('/testfactoryservice', {
             templateUrl: 'views/testservicefactory.html',
