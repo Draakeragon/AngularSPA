@@ -4,19 +4,19 @@
             var factory = {};
             
             factory.multiply = function(a, b) {
-               return a * b
+               return a * 0.06
             }
             return factory;
          });
          
          bookApp.service('CalcService', function(MathService){
-            this.square = function(a) {
+            this.berekenBTW = function(a) {
                return MathService.multiply(a,a);
             }
          });
          
          bookApp.controller('BTWController', function($scope, CalcService) {
-            $scope.square = function() {
-               $scope.result = CalcService.square($scope.number);
+            $scope.berekenBTW = function() {
+               $scope.result = CalcService.berekenBTW($scope.number);
             }
          });
