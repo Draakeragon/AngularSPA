@@ -1,14 +1,11 @@
 bookApp.controller("logincontroller", function($scope, UserService) {
-    console.log("logincontroller");
-
+//gebruikt userservice als dependency
     $scope.loggedIn = false;
-    console.log($scope.loggedIn);
-
+    //je begint als niet ingelogd
     $scope.login = function() {
-        console.log($scope.user.username, $scope.user.password);
         if(UserService.login($scope.user.username, $scope.user.password) !== false) {
-            $scope.loggedIn = true;
-            
+            $scope.loggedIn = true; //als je username + Wachtwoord combinatie voorkomen in de Userservice
+            //dan ben je ingelogd (boolean)
         }
          
     };

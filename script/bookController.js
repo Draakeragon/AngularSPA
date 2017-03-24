@@ -1,10 +1,12 @@
 bookApp.controller('bookController', function($scope) {
 	//code
 
-	$scope.categories = ["Detective", "Wetenschap", "Overig"];
+	$scope.categories = ["Detective", "Wetenschap", "Overig", "Zelfhulp", "School", "Roman", "Sci-fi", "Fantasy", "Kinder", "Romantiek", "Literatuur", "Nieuws", "Kunst"];
 
 
 	var localItems = JSON.parse(localStorage.getItem("items"));
+	//Met stringyfy krijg je de error duplicates in array.
+	//Met parse krijg je geen error maar dan kan je geen boeken opslaan.
 
 	if(localItems != undefined && localItems.length>0) {
 		$scope.items = localItems;
@@ -24,19 +26,19 @@ bookApp.controller('bookController', function($scope) {
 		$scope.items.forEach(function(e, i) {
 			if(e.name === item.name) {
 				deleteIndex = i;
-			}
+			}	//zoek het nummer op en verwijder hem uit de index
 		});
 
 		$scope.items.splice(deleteIndex, 1);
 
-		localStorage.setItem("items", JSON.parse($scope.items));
+		localStorage.setItem("items", JSON.parse($scope.items)); //hierna opnieuw lezen
 	};
 
 	$scope.saveNewItem = function() {
 		console.log($scope.newItem);
 
 		$scope.items.push({
-			isbn: $scope.newItem.isbn,
+			isbn: $scope.newItem.isbn, //sla de gegevens op
 			titel: $scope.newItem.titel,
 			categorie: $scope.newItem.categorie,
 			auteur: $scope.newItem.auteur,
@@ -46,11 +48,11 @@ bookApp.controller('bookController', function($scope) {
 
 		$scope.newItem = {};
 
-		localStorage.setItem("items", JSON.parse($scope.items));
+		localStorage.setItem("items", JSON.parse($scope.items)); //laadt het in de array
 	};
 
 	$scope.updateItem = function(item) {
-		item.updating=false;
+		item.updating=false; //verander de status van het update veld
 
 		localStorage.setItem("items", JSON.parse($scope.items));
 	};

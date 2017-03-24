@@ -2,15 +2,15 @@
 
      <style type="text/css">
     .detective {
-    	color: #BADA55;
+    	color:  darkgray;
     }
 
     .wetenschap {
-    	color: #C0FFEE;
+    	color:  grey;
     }
 
     .overig {
-    	color: #D13537;
+    	color: cadetblue;
     }
 
     </style>
@@ -80,8 +80,6 @@
 	  <div class="form-group">
 	    <label for="itemInput">Nieuw boek toevoegen</label>
         <input type="number"  name="isbn" class="form-control" id="itemInput" min="00000000" max="99999999" placeholder="ISBN Nummer ..." ng-model="newItem.isbn" required>
-                <span style="color:red" ng-show= bookForm.isbn.$dirty && bookForm.isbn.$invalid &&
-                    ng-show="bookForm.isbnr.$erro.required">ISBN is verplicht.</span>
                 </br>
             <div>     
 	    <input type="text" class="form-control" id="itemInput" placeholder="titel ..." ng-model="newItem.titel" required>

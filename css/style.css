@@ -1,3 +1,5 @@
+/* CSS gebruikt de images uit de map Images/CSS. */
+
 html, body {
 text-align: center;
 }
@@ -18,7 +20,7 @@ body {
   margin: 0 auto 0 auto;
  text-align:left;}
 
-/* targets SPA containers */
+/* alle SPA containers je kunt ook de ng-view een klasse geven */
 .container
 {
 	width: 900px;
