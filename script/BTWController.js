@@ -1,4 +1,4 @@
-        // var mainApp = angular.module("bookApp");
+         //var mainApp = angular.module("bookApp");
          
          bookApp.factory('MathService', function() {
             var factory = {}; //maak een va factory aan
