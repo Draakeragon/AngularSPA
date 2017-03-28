@@ -15,9 +15,9 @@
     		</tr>
     	</thead>
     	<tbody>
-
+            
             <!-- FOREACH item IN array -->
-    		<tr ng-repeat="item in items | filter: searchTerm">
+    		<tr class="edit" ng-repeat="item in items | filter: searchTerm">
                 	<td>
                     <span ng-hide="item.updating">{{item.isbn}}</span>
                     <input type="text" ng-model="item.isbn" ng-show="item.updating">
@@ -45,9 +45,7 @@
                     <input type="text" ng-model="item.prijs" ng-show="item.updating">
                 </td>
                 <td>
-                    
                 </td>
-
     	</tbody>
     </table>
 </div>

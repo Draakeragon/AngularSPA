@@ -15,22 +15,25 @@
   </head>
 
   <body>
-
+        <div class="title">
+        <h4> Adriaan van den Berg 14062070 Single Page Application HHS Zoetermeer</h4>
+        </div>
         <div id="main">
 
             <div class="main_top">
-            
+                       
             </div>
 
+             
             <div class="main_body">
 
     <br>
-
-            <a href="#!/admin">Admin</a>
-            <a href="#!/boeken">Boekenlijst</a>
-            <a href="#!/login">login pagina</a>
-            <a href="#!/testfactoryservice">BTW pagina</a>
-
+        <ul>
+            <li><a href="#!/admin">Admin</a></li>
+            <li><a href="#!/boeken">Boekenlijst</a></li>
+            <li><a href="#!/login">login pagina</a></li>
+            <li><a href="#!/testfactoryservice">BTW pagina</a></li>
+        </ul>
 
     <hr>
     <div ng-view> </div> <!-- hier komen de dynamische ingeladen views -->
@@ -46,13 +49,11 @@
     <div class="main_bottom"></div>
             
         </div>
-
-        
         
         <div id="footer">
 
         </div>
-        
+                
         </div>
   </body>
 </html>
