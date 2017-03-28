@@ -32,7 +32,7 @@
     	<tbody>
 
             <!-- FOREACH item IN array -->
-    		<tr ng-repeat="item in items | filter: searchTerm">
+    		<tr ng-repeat="item in items | filter: searchTerm track by $index">
                 	<td>
                     <span ng-hide="item.updating">{{item.isbn}}</span>
                     <input type="text" ng-model="item.isbn" ng-show="item.updating">

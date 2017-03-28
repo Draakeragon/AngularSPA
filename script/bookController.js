@@ -31,7 +31,7 @@ bookApp.controller('bookController', function($scope) {
 
 		$scope.items.splice(deleteIndex, 1);
 
-		localStorage.setItem("items", JSON.stringify($scope.items)); //hierna opnieuw lezen
+		localStorage.setItem("items", angular.toJson($scope.items)); //hierna opnieuw lezen
 	};
 
 	$scope.saveNewItem = function() {
@@ -48,13 +48,13 @@ bookApp.controller('bookController', function($scope) {
 
 		$scope.newItem = {};
 
-		localStorage.setItem("items", JSON.stringify($scope.items)); //laadt het in de array
+		localStorage.setItem("items", angular.toJson($scope.items)); //laadt het in de array
 	};
 
 	$scope.updateItem = function(item) {
 		item.updating=false; //verander de status van het update veld
 
-		localStorage.setItem("items", JSON.stringify($scope.items));
+		localStorage.setItem("items", angular.toJson($scope.items));
 	};
 
 

@@ -61,7 +61,7 @@ beforeEach(inject(function(_$filter_){
 
         it('lege input', function() {
         var input = "";  
-        var expected = "Onbekend"; //tekens + cijfers
+        var expected = "Onbekend"; //Laat woord zien indien leeg
 
         expect($filter(input).toBe(expected));
   });

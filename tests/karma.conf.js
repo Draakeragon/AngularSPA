@@ -15,9 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../bower_componenets/angular/angular.js',
-      '../bower_componenets/angular-mocks/angular-mocks.js',
-      '../bower_componenets/angular-route/angular-route.js',
+      '../bower_components/angular/angular.js',
+      '../bower_components/angular-mocks/angular-mocks.js',
+      '../bower_components/angular-route/angular-route.js',
+      '../views/**.js',
       '../script/uppercasefilter.js',
       'spec/*.js'
     ],
@@ -59,7 +60,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
