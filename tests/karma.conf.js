@@ -20,6 +20,7 @@ module.exports = function(config) {
       '../bower_components/angular-route/angular-route.js',
       '../views/**.js',
       '../script/uppercasefilter.js',
+      '../script/route.js',
       'spec/*.js'
     ],
 
