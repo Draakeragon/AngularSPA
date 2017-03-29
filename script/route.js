@@ -11,6 +11,10 @@ bookApp.config(function($routeProvider) {
             templateUrl: 'views/admin.html',
             controller: 'bookController' //Admin en boeken gebruiken dezelfde controller omdat ik anders code moet kopiëren. in slechts 1 pagina kan worden CUD 
         })
+        .when('/uitgeverij', {
+            templateUrl: 'views/uitgever.html',
+            controller:  'uitgeverijController'
+        })
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'logincontroller'

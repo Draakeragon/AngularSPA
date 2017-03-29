@@ -1,0 +1,57 @@
+<div class = "container">
+    <h1>Uitgeverij</h1>
+    <br>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+        </div>
+    </div>
+
+    <br><br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Uitgeverij</th>
+                <th>locatie</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="uitgever in uitgeverij | filter: search">
+
+                <td>
+                    <span ng-hide="uitgever.updating">{{uitgever.uitgeverij}} </span>
+                    <input type="text" ng-model="uitgever.uitgeverij" ng-show="uitegeverij.updating">
+                </td>
+
+                <td>
+                    <span ng-hide="uitgever.updating">{{uitgever.locatie}} </span>
+                    <input type="text" ng-model="uitgever.locatie" ng-show="uitgever.updating">
+                </td>
+
+
+                <td>
+                    <button type="button" class="btn btn-warning" ng-click="uitgever.updating = true;" ng-hide="uitgever.updating">	Update</button>
+                    <button type="button" class="btn btn-success" ng-click="updateUitgeverij(uitgever)" ng-show="uitgever.updating"> Opslaan</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <form required>
+        <div class="form-group">
+            <h4>Add Uitgeverij</h4>
+            <label for="itemInput">Uitgeverij</label>
+            <input type="text" name="UitgeverijName" class="form-control" id="itemInput" placeholder="Uitgeverij ..." ng-model="newUitgeverij.uitgeverij"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="itemInput">Locatie</label>
+            <input type="text" class="form-control" id="itemInput" placeholder="Locatie ..." ng-model="newUitgeverij.locatie" required>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="saveNewUitgeverij()">Opslaan</button>
+    </form>
+</div>

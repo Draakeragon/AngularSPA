@@ -32,8 +32,8 @@ Chrome Network disable cache
 
 http-server (start de localhost)
 NPM start (start de webserver)
-Webdriver – manager start (start selenium
-Protractor conf js (start protractor.)
+Webdriver ï¿½ manager start (start selenium
+Protractor conf.js (start protractor.)
 4 commandoprompts nodig. 
 Gebruik geen administrator
 

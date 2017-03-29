@@ -5,6 +5,7 @@ bookApp.controller('bookController', function($scope) {
 
 
 	var localItems = JSON.parse(localStorage.getItem("items"));
+	$scope.uitgeverij = JSON.parse(localStorage.getItem("uitgeverij"));
 	//Met stringyfy krijg je de error duplicates in array.
 	//Met parse krijg je geen error maar dan kan je geen boeken opslaan.
 
@@ -13,10 +14,10 @@ bookApp.controller('bookController', function($scope) {
 	}
 	else {
 		$scope.items = [
-			{isbn:"14882665", titel: "Sherlock Holmes", categorie:"Detective", auteur: "Arthur Conan Doyle", beschrijving: "een spannend sherlock Holems Boek", prijs: 12.99},
-			{isbn:"69483726", titel: "Alles over antimaterie", categorie:"Wetenschap", auteur: "Stephan Hawking", beschrijving: "Het universum van Stephen Hawking", prijs: 20.99},
-			{isbn:"59382711", titel: "Guinnes book of Records", categorie:"Overig", auteur: "Guinnes inc.", beschrijving: "Alle records in een boek!", prijs: 40.49},
-			{isbn:"95698327", titel: "test", categorie:"test", auteur: "test", beschrijving: "test", prijs: 10.00}
+			{isbn:"14882665", titel: "Sherlock Holmes", categorie:"Detective",auteur: "Arthur Conan Doyle", uitgeverij: "FASA", beschrijving: "een spannend sherlock Holems Boek", prijs: 12.99},
+			{isbn:"69483726", titel: "Alles over antimaterie", categorie:"Wetenschap", uitgeverij: "FASA",  auteur: "Stephan Hawking", beschrijving: "Het universum van Stephen Hawking", prijs: 20.99},
+			{isbn:"59382711", titel: "Guinnes book of Records", categorie:"Overig", uitgeverij: "FASA",  auteur: "Guinnes inc.", beschrijving: "Alle records in een boek!", prijs: 40.49},
+			{isbn:"95698327", titel: "test", categorie:"test", auteur: "test", uitgeverij: "FASA",  beschrijving: "test", prijs: 10.00}
 		];
 	}
 
@@ -36,14 +37,16 @@ bookApp.controller('bookController', function($scope) {
 
 	$scope.saveNewItem = function() {
 		console.log($scope.newItem);
-
+		debugger;
 		$scope.items.push({
 			isbn: $scope.newItem.isbn, //sla de gegevens op
 			titel: $scope.newItem.titel,
 			categorie: $scope.newItem.categorie,
 			auteur: $scope.newItem.auteur,
+			uitgeverij: $scope.newItem.uitgeverij,
 			beschrijving: $scope.newItem.beschrijving,
 			prijs: $scope.newItem.prijs,
+
 		});
 
 		$scope.newItem = {};

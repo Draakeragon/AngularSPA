@@ -26,7 +26,7 @@
     <table class="table">
     	<thead>
     		<tr>
-    			<th>ISBN</th><th>Titel</th><th></th><th>Categorie</th><th>Auteur</th><th>Beschrijving</th><th>Prijs</th><th></th>
+    			<th>ISBN</th><th>Titel</th><th></th><th>Categorie</th><th></th><th>Auteur</th><th>Uitgeverij</th><th>Beschrijving</th><th>Prijs</th><th></th>
     		</tr>
     	</thead>
     	<tbody>
@@ -47,9 +47,14 @@
                                 <!-- Category boven gebruikt voor de inline CSS ter demonstratie-->
                                    {{item.categorie}}
                 </td>
+                           <td>                
                	<td>
                     <span ng-hide="item.updating">{{item.auteur | makeUppercase}}</span>
                     <input type="text" ng-model="item.auteur" ng-show="item.updating">
+                </td>
+                <td>
+                                <!-- laat de uitgever zien -->
+                                   {{item.uitgeverij}}
                 </td>
                   	<td>
                     <span ng-hide="item.updating">{{item.beschrijving}}</span>
@@ -87,9 +92,16 @@
 	    <input type="text" class="form-control" id="itemInput" placeholder="titel ..." ng-model="newItem.titel" required>
 	  </div></br>
 	  <div class="form-group">
+          <label for="itemInput">Categorie</label>
 	  	<select class="form-control" ng-model="newItem.categorie" required>
 		  <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
 		</select>
+        <div class="form-group">
+         <!-- uitgeverij undefined -->
+        <label for="itemInput">Uitgeverij</label>
+        <select class="form-control" ng-model="newItem.uitgeverij" ng-options="uitgever.uitgeverij as uitgever.uitgeverij for uitgever in uitgeverij" required></select>
+        </div>
+
 	  </div></br>
       <input type="text" class="form-control" id="itemInput" placeholder="auteur ..." ng-model="newItem.auteur" required>
 </br>
