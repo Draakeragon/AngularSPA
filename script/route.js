@@ -24,7 +24,7 @@ bookApp.config(function($routeProvider) {
             controller: 'BTWController'
         })
         .otherwise({
-            redirectTo: '/boeken' //Als je een fout maakt of een link klikt die nergens naartoe gaat dan ga je standaard naar de boeken pagina
+            redirectTo: '/login' //Als je een fout maakt of een link klikt die nergens naartoe gaat dan ga je standaard naar de boeken pagina
         });
 
 });
