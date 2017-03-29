@@ -1,0 +1,58 @@
+<div class = "container">
+    <h1>Categorie</h1>
+    <br>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+        </div>
+    </div>
+
+    <br><br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Categorie</th>
+                <th>Code</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr ng-repeat="cat in categorie | filter: search">
+
+                <td>
+                    <span ng-hide="cat.updating">{{cat.categorie}} </span>
+                    <input type="text" ng-model="cat.categorie" ng-show="cat.updating">
+                </td>
+
+                <td>
+                    <span ng-hide="cat.updating">{{cat.code}} </span>
+                    <input type="text" ng-model="cat.code" ng-show="cat.updating">
+                </td>
+
+
+                <td>
+                    <button type="button" class="btn btn-warning" ng-click="cat.updating = true;" ng-hide="cat.updating">Update</button>
+                    <button type="button" class="btn btn-success" ng-click="updateCategorie(cat)" ng-show="cat.updating"> Opslaan</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <form name="contentForm">
+        <div class="form-group">
+            <h4>Toevoegen Categorie</h4>
+            <label for="itemInput">Categorie</label>
+            <input type="text" name="CategorieName" class="form-control" id="itemInput" placeholder="Categorie ..." ng-model="newCategorie.categorie"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="itemInput">Code</label>
+            <input type="text" class="form-control" id="itemInput" placeholder="Code ..." ng-model="newCategorie.code" required>
+            <br>
+            <button type="submit" class="btn btn-primary"  ng-disabled="contentForm.$invalid" ng-click="saveNewCategorie()">Opslaan</button>
+        </div>
+    </form>
+</div>

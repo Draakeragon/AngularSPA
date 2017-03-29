@@ -26,28 +26,21 @@
     <table class="table">
     	<thead>
     		<tr>
-    			<th>ISBN</th><th>Titel</th><th></th><th>Categorie</th><th></th><th>Auteur</th><th>Uitgeverij</th><th>Beschrijving</th><th>Prijs</th><th></th>
+    			<th>ISBN</th><th>Titel</th><th>Auteur</th><th>Uitgeverij</th><th>Categorie</th><th>Beschrijving</th><th>Prijs</th><th></th>
     		</tr>
     	</thead>
     	<tbody>
 
             <!-- FOREACH item IN array -->
     		<tr ng-repeat="item in items | filter: searchTerm track by $index">
-                	<td>
+                <td>
                     <span ng-hide="item.updating">{{item.isbn}}</span>
                     <input type="text" ng-model="item.isbn" ng-show="item.updating">
                 </td>
     			<td>
                     <span ng-hide="item.updating">{{item.titel}}</span>
                     <input type="text" ng-model="item.titel" ng-show="item.updating">
-
-                </td>
-                <td>
-                    <td ng-class="{detective: item.categorie==='Detective', wetenschap: item.categorie==='Wetenschap', overig: item.categorie==='Overig'}">
-                                <!-- Category boven gebruikt voor de inline CSS ter demonstratie-->
-                                   {{item.categorie}}
-                </td>
-                           <td>                
+                </td>       
                	<td>
                     <span ng-hide="item.updating">{{item.auteur | makeUppercase}}</span>
                     <input type="text" ng-model="item.auteur" ng-show="item.updating">
@@ -55,6 +48,10 @@
                 <td>
                                 <!-- laat de uitgever zien -->
                                    {{item.uitgeverij}}
+                </td>
+                <td>
+                                <!-- laat de categorie zien -->
+                                   {{item.categorie}}
                 </td>
                   	<td>
                     <span ng-hide="item.updating">{{item.beschrijving}}</span>
@@ -91,27 +88,24 @@
             <div>     
 	    <input type="text" class="form-control" id="itemInput" placeholder="titel ..." ng-model="newItem.titel" required>
 	  </div></br>
-	  <div class="form-group">
-          <label for="itemInput">Categorie</label>
-	  	<select class="form-control" ng-model="newItem.categorie" required>
-		  <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
-		</select>
         <div class="form-group">
          <!-- uitgeverij undefined -->
         <label for="itemInput">Uitgeverij</label>
         <select class="form-control" ng-model="newItem.uitgeverij" ng-options="uitgever.uitgeverij as uitgever.uitgeverij for uitgever in uitgeverij" required></select>
         </div>
-
-	  </div></br>
+        <label for="itemInput">Categorie</label>
+        <select class="form-control" ng-model="newItem.categorie" ng-options="cat.categorie as cat.categorie for cat in categorien" required></select>
+        </br>
       <input type="text" class="form-control" id="itemInput" placeholder="auteur ..." ng-model="newItem.auteur" required>
-</br>
+        </br>
       <input type="text" class="form-control" id="itemInput" placeholder="beschrijving ..." ng-model="newItem.beschrijving" required>
-</br>
+        </br>
       <input type="number" class="form-control" id="itemInput" min="1.00" max="99.99" placeholder="prijs ..." ng-model="newItem.prijs"required>
-</br>
+        </br>
 	  <button type="button" class="btn btn-danger">Ongedaan maken</button>
 
 	  <button type="submit" class="btn btn-primary" ng-disabled="bookForm.$invalid" ng-click="saveNewItem()">Opslaan</button>
+      </div>
 	</form>
 
 

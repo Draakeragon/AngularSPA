@@ -22,7 +22,7 @@
 
                 <td>
                     <span ng-hide="uitgever.updating">{{uitgever.uitgeverij}} </span>
-                    <input type="text" ng-model="uitgever.uitgeverij" ng-show="uitegeverij.updating">
+                    <input type="text" ng-model="uitgever.uitgeverij" ng-show="uitgever.updating">
                 </td>
 
                 <td>
@@ -41,9 +41,9 @@
     </table>
 </div>
 
-    <form required>
+    <form name="contentForm">
         <div class="form-group">
-            <h4>Add Uitgeverij</h4>
+            <h4>Toevoegen Uitgeverij</h4>
             <label for="itemInput">Uitgeverij</label>
             <input type="text" name="UitgeverijName" class="form-control" id="itemInput" placeholder="Uitgeverij ..." ng-model="newUitgeverij.uitgeverij"
                 required>
@@ -51,7 +51,8 @@
         <div class="form-group">
             <label for="itemInput">Locatie</label>
             <input type="text" class="form-control" id="itemInput" placeholder="Locatie ..." ng-model="newUitgeverij.locatie" required>
+            <br>
+            <button type="submit" class="btn btn-primary"  ng-disabled="contentForm.$invalid" ng-click="saveNewUitgeverij()">Opslaan</button>
         </div>
-        <button type="submit" class="btn btn-primary" ng-click="saveNewUitgeverij()">Opslaan</button>
     </form>
 </div>

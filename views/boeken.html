@@ -11,7 +11,7 @@
     <table class="table">
     	<thead>
     		<tr>
-    			<th>ISBN</th><th>Titel</th><th></th><th>Categorie</th><th>Uitgeverij</th><th>Auteur</th><th>Beschrijving</th><th>Prijs</th><th></th>
+    			<th>ISBN</th><th>Titel</th><th></th><th>Uitgeverij</th><th>Auteur</th><th>Beschrijving</th><th>Prijs</th><th></th>
     		</tr>
     	</thead>
     	<tbody>
@@ -26,11 +26,6 @@
                     <span ng-hide="item.updating">{{item.titel}}</span>
                     <input type="text" ng-model="item.titel" ng-show="item.updating">
 
-                </td>
-                <td>
-                    <td ng-class="{detective: item.categorie==='Detective', wetenschap: item.categorie==='Wetenschap', overig: item.categorie==='Overig'}">
-
-                                   {{item.categorie}}
                 </td>
                	<td>
                     <span ng-hide="item.updating">{{item.auteur | makeUppercase}}</span>
