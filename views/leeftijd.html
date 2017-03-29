@@ -1,0 +1,57 @@
+<div class = "container">
+    <h1>Leeftijd</h1>
+    <br>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+        </div>
+    </div>
+
+    <br><br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Leeftijdscategorie</th>
+                <th>Uitleg</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr ng-repeat="leef in leeftijd | filter: search">
+                <td>
+                    <span ng-hide="leef.updating">{{leef.leeftijd}} </span>
+                    <input type="text" ng-model="leef.leeftijd" ng-show="leef.updating">
+                </td>
+
+                <td>
+                    <span ng-hide="leef.updating">{{leef.uitleg}} </span>
+                    <input type="text" ng-model="leef.locatie" ng-show="leef.updating">
+                </td>
+
+
+                <td>
+                    <button type="button" class="btn btn-warning" ng-click="leef.updating = true;" ng-hide="leef.updating">	Update</button>
+                    <button type="button" class="btn btn-success" ng-click="updateLeeftijd(leef)" ng-show="leef.updating"> Opslaan</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <form name="contentForm">
+        <div class="form-group">
+            <h4>Toevoegen Leeftijdscategorie</h4>
+            <label for="itemInput">Leeftijdscategorie</label>
+            <input type="text" name="LeefName" class="form-control" id="itemInput" placeholder="Leeftijdscategorie ..." ng-model="newLeeftijd.leeftijd"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="itemInput">Uitleg</label>
+            <input type="text" class="form-control" id="itemInput" placeholder="Uitleg Jaren Leeftijd ..." ng-model="newLeeftijd.uitleg" required>
+            <br>
+            <button type="submit" class="btn btn-primary"  ng-disabled="contentForm.$invalid" ng-click="saveNewLeeftijd()">Opslaan</button>
+        </div>
+    </form>
+</div>

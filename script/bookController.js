@@ -7,6 +7,7 @@ bookApp.controller('bookController', function($scope) {
 	var localItems = JSON.parse(localStorage.getItem("items"));
 	$scope.uitgeverij = JSON.parse(localStorage.getItem("uitgeverij"));
 	$scope.categorien = JSON.parse(localStorage.getItem("categorie"));
+	$scope.leeftijd = JSON.parse(localStorage.getItem("leeftijd"));
 
 
 	if(localItems != undefined && localItems.length>0) {
@@ -14,10 +15,10 @@ bookApp.controller('bookController', function($scope) {
 	}
 	else {
 		$scope.items = [
-			{isbn:"14882665", titel: "Sherlock Holmes",auteur: "Arthur Conan Doyle", uitgeverij: "FASA", categorie: "Detective", beschrijving: "een spannend sherlock Holems Boek", prijs: 12.99},
-			{isbn:"69483726", titel: "Alles over antimaterie",  uitgeverij: "FASA", categorie: "Wetenschap",  auteur: "Stephan Hawking", beschrijving: "Het universum van Stephen Hawking", prijs: 20.99},
-			{isbn:"59382711", titel: "Guinnes book of Records", uitgeverij: "FASA", categorie:"Overig",  auteur: "Guinnes inc.", beschrijving: "Alle records in een boek!", prijs: 40.49},
-			{isbn:"95698327", titel: "test", auteur: "test", uitgeverij: "FASA", categorie:"test",  beschrijving: "test", prijs: 10.00}
+			{isbn:"14882665", titel: "Sherlock Holmes",auteur: "Arthur Conan Doyle", uitgeverij: "FASA", categorie: "Detective", leeftijd: "Volwassenen", beschrijving: "een spannend sherlock Holems Boek", prijs: 12.99},
+			{isbn:"69483726", titel: "Alles over antimaterie",  uitgeverij: "FASA", categorie: "Wetenschap", leeftijd: "Volwassenen",  auteur: "Stephan Hawking", beschrijving: "Het universum van Stephen Hawking", prijs: 20.99},
+			{isbn:"59382711", titel: "Guinnes book of Records", uitgeverij: "FASA", categorie:"Overig", leeftijd: "Volwassenen",  auteur: "Guinnes inc.", beschrijving: "Alle records in een boek!", prijs: 40.49},
+			{isbn:"95698327", titel: "test", auteur: "test", uitgeverij: "FASA", categorie:"test", leeftijd: "Volwassenen", beschrijving: "test", prijs: 10.00}
 		];
 	}
 
@@ -45,6 +46,7 @@ bookApp.controller('bookController', function($scope) {
 			auteur: $scope.newItem.auteur,
 			uitgeverij: $scope.newItem.uitgeverij,
 			categorie: $scope.newItem.categorie,
+			leeftijd: $scope.newItem.leeftijd,
 			beschrijving: $scope.newItem.beschrijving,
 			prijs: $scope.newItem.prijs,
 

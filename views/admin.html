@@ -26,7 +26,7 @@
     <table class="table">
     	<thead>
     		<tr>
-    			<th>ISBN</th><th>Titel</th><th>Auteur</th><th>Uitgeverij</th><th>Categorie</th><th>Beschrijving</th><th>Prijs</th><th></th>
+    			<th>ISBN</th><th>Titel</th><th>Auteur</th><th>Uitgeverij</th><th>Categorie</th><th>Leeftijd</th><th>Beschrijving</th><th>Prijs</th><th></th>
     		</tr>
     	</thead>
     	<tbody>
@@ -52,6 +52,10 @@
                 <td>
                                 <!-- laat de categorie zien -->
                                    {{item.categorie}}
+                </td>
+                <td>
+                                <!-- laat de leeftijd zien -->
+                                   {{item.leeftijd}}
                 </td>
                   	<td>
                     <span ng-hide="item.updating">{{item.beschrijving}}</span>
@@ -95,6 +99,9 @@
         </div>
         <label for="itemInput">Categorie</label>
         <select class="form-control" ng-model="newItem.categorie" ng-options="cat.categorie as cat.categorie for cat in categorien" required></select>
+        </br>
+         <label for="itemInput">Leeftijd</label>
+        <select class="form-control" ng-model="newItem.leeftijd" ng-options="leef.leeftijd as leef.leeftijd for leef in leeftijd" required></select>
         </br>
       <input type="text" class="form-control" id="itemInput" placeholder="auteur ..." ng-model="newItem.auteur" required>
         </br>

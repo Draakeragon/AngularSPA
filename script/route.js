@@ -15,6 +15,10 @@ bookApp.config(function($routeProvider) {
             templateUrl: 'views/categorie.html',
             controller:  'categorieController'
         })
+         .when('/leeftijd', {
+            templateUrl: 'views/leeftijd.html',
+            controller:  'leeftijdController'
+        })
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'logincontroller'
