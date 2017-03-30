@@ -3,15 +3,15 @@
          bookApp.factory('MathService', function() {
             var factory = {}; //maak een va factory aan
             
-            factory.multiply = function(a, b) {
+            factory.multiply = function(a) {
                return a * 0.06 //uiteindelijk wordt de functie aangeroepen en wordt er 6% berekend
-            }
+            }           
             return factory; //return de factory
          });
          
          bookApp.service('CalcService', function(MathService){
             this.berekenBTW = function(a) {
-               return MathService.multiply(a,a); //De service vermenigvuldigd met A met a
+               return MathService.multiply(a); //De service vermenigvuldigd met A met a
             }
          });
          

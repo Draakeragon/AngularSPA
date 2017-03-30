@@ -1,9 +1,6 @@
 bookApp.controller('bookController', function($scope) {
 	//code
 
-	$scope.categories = ["Detective", "Wetenschap", "Overig", "Zelfhulp", "School", "Roman", "Sci-fi", "Fantasy", "Kinder", "Romantiek", "Literatuur", "Nieuws", "Kunst"];
-
-
 	var localItems = JSON.parse(localStorage.getItem("items"));
 	$scope.uitgeverij = JSON.parse(localStorage.getItem("uitgeverij"));
 	$scope.categorien = JSON.parse(localStorage.getItem("categorie"));
@@ -38,7 +35,7 @@ bookApp.controller('bookController', function($scope) {
 
 	$scope.saveNewItem = function() {
 		console.log($scope.newItem);
-		debugger;
+		
 		$scope.items.push({
 			isbn: $scope.newItem.isbn, //sla de gegevens op
 			titel: $scope.newItem.titel,

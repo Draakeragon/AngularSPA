@@ -96,7 +96,7 @@
          <!-- uitgeverij undefined -->
         <label for="itemInput">Uitgeverij</label>
         <select class="form-control" ng-model="newItem.uitgeverij" ng-options="uitgever.uitgeverij as uitgever.uitgeverij for uitgever in uitgeverij" required></select>
-        </div>
+        </div>                                                          <!-- Selectbox verwacht een key voor de opties, Dit is uitgeverij in uitgever --> 
         <label for="itemInput">Categorie</label>
         <select class="form-control" ng-model="newItem.categorie" ng-options="cat.categorie as cat.categorie for cat in categorien" required></select>
         </br>

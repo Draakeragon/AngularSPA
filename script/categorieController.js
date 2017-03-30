@@ -15,7 +15,7 @@ bookApp.controller('categorieController', function ($scope) {
         item.updating = false;
         localStorage.setItem("categorie", angular.toJson($scope.categorie));
     };
-
+    
     $scope.saveNewCategorie = function () {
 
         var newCategorie = $scope.newCategorie.categorie;
